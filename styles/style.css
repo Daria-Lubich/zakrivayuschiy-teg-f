@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: var(--bg-color);
   border: 2px solid var(--accent-detail-color);
   margin: 100px auto 99px;
   font-family: var(--font-accent);
@@ -93,38 +93,36 @@
   box-sizing: border-box;
 }
 
-.card:nth-child(1) .card__image {
+.filter-grayscale {
   filter: grayscale(70%);
 }
 
-/* 2 — чуть насыщеннее */
-.card:nth-child(2) .card__image {
+.filter-saturate {
   filter: saturate(150%);
 }
 
-/* 3 — множественный фильтр (сепия + яркость + контраст) */
-.card:nth-child(3) .card__image {
+.filter-sepia-bright {
   filter: sepia(60%) brightness(1.1) contrast(1.2);
 }
 
-/* 4 — поворот оттенка */
-.card:nth-child(4) .card__image {
+.filter-hue-rotate {
   filter: hue-rotate(90deg);
 }
 
-/* 5 — инверсия + лёгкая прозрачность (чтобы не было слишком резко) */
-.card:nth-child(5) .card__image {
+.filter-invert {
   filter: invert(80%);
 }
 
-/* 6 — яркость */
-.card:nth-child(6) .card__image {
+.filter-brightness {
   filter: brightness(200%);
 }
 
-/* 7 — лёгкое размытие */
-.card:nth-child(7) .card__image {
+.filter-blur {
   filter: blur(2px);
+}
+
+.filter-vignette {
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.6)) brightness(0.95);
 }
 
 .card__image-label {
@@ -133,7 +131,7 @@
   right: 25px;
   font-size: 14px;
   font-family: var(--font-accent);
-  opacity: 0.6;
+  opacity: 0.5;
   color: var(--accent-detail-color);
   mix-blend-mode: hard-light;
 
@@ -188,8 +186,9 @@
   outline: none;
   border-color: var(--accent-detail-color);
 }
+
 /*   СЕРДЦЕ   */
-.like-icon  /*   svg   */ {
+.heart {
   transform-origin: center;
 }
 
@@ -246,6 +245,7 @@
 
 .like-icon.is-liked .heart {
   animation: heart-scale 0.3s ease-in 0.1s;
+  
 }
 
 .like-icon.is-liked .sparks {
@@ -360,10 +360,15 @@
 }
 
 .save-dialog-text {
+  font-variation-settings: "wght" var(--weight-save-dialog);
   font-family: var(--font-accent);
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
+}
+
+.save-dialog-button .button__text {
+font-variation-settings: "wght" var(--weight-save-dialog);
 }
 
 .save-dialog::backdrop {
