@@ -144,7 +144,8 @@
 
 @supports (
   (text-stroke: 1px var(--text-stroke-color)) or
-    (-webkit-text-stroke: 1px var(--text-stroke-color))) {
+    (-webkit-text-stroke: 1px var(--text-stroke-color))
+) {
   .card__image-label {
     -webkit-text-stroke: 1px var(--text-stroke-color);
     text-stroke: 1px var(--text-stroke-color);
@@ -245,7 +246,6 @@
 
 .like-icon.is-liked .heart {
   animation: heart-scale 0.3s ease-in 0.1s;
-  
 }
 
 .like-icon.is-liked .sparks {
@@ -360,7 +360,7 @@
 }
 
 .save-dialog-text {
-  font-variation-settings: "wght" var(--weight-save-dialog);
+  font-weight: 400;
   font-family: var(--font-accent);
   font-size: 14px;
   line-height: 150%;
@@ -368,9 +368,9 @@
 }
 
 .save-dialog-button .button__text {
-font-variation-settings: "wght" var(--weight-save-dialog);
-line-height: 90%;
-text-transform: uppercase;
+  font-weight: 400;
+  line-height: 90%;
+  text-transform: uppercase;
 }
 
 .save-dialog::backdrop {
